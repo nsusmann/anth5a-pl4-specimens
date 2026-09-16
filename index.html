@@ -22,7 +22,10 @@
   .wrap{max-width:1180px;margin:0 auto;padding-block:32px 56px}
   header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
   h1{font-size:clamp(1.4rem,3.4vw,2rem);margin:0 0 8px;letter-spacing:-.01em}
-  .lede{margin:0;color:var(--muted);max-width:62ch}
+  .note{margin:0 0 14px;max-width:70ch;background:var(--panel);border:1px solid var(--line);
+    border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;font-size:.94rem}
+  .note strong{color:var(--accent)}
+  .lede{margin:0;color:var(--muted);max-width:70ch}
   .tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
   .btn{font:inherit;font-size:.9rem;padding:8px 14px;border-radius:999px;cursor:pointer;
     border:1px solid var(--line);background:var(--panel);color:var(--ink)}
@@ -56,9 +59,14 @@
 
   <header>
     <h1>P+L 4 &mdash; Unidentified Specimens</h1>
-    <p class="lede">Each specimen below is unlabeled. Use the 3D viewers to examine the crania and
-    mandibles from every angle, then record your identifications on your worksheet. Cranial capacity
-    (cc) is given for each skull.</p>
+    <p class="note"><strong>Note:</strong> Please do not reverse image search. These are famous
+    specimens and you will find them immediately. The accuracy of your tree will not affect your
+    grade. Your grade will be based on the level of effort: details and well-described logic,
+    integration of class discussions and reading, obvious effort during class. This assignment is
+    about experimenting with different hypotheses and describing your process.</p>
+    <p class="lede">The specimen number is S# or M#. Mandibles are jaw bones. The &ldquo;cc&rdquo;
+    number indicates the cranial capacity, or size of the brain. The specimens don&rsquo;t have any
+    other information on purpose. You&rsquo;re not supposed to know the species!</p>
     <div class="tools">
       <button class="btn" id="loadAll" type="button">Load all 3D models</button>
       <button class="btn" id="resetAll" type="button">Reset viewers</button>
