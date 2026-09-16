@@ -26,6 +26,29 @@
     border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;font-size:.94rem}
   .note strong{color:var(--accent)}
   .lede{margin:0;color:var(--muted);max-width:70ch}
+  .tabs{display:flex;gap:4px;margin-top:20px;border-bottom:1px solid var(--line)}
+  .tab{font:inherit;font-size:.95rem;font-weight:600;padding:10px 18px;cursor:pointer;
+    background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);
+    margin-bottom:-1px;border-radius:8px 8px 0 0}
+  .tab:hover{color:var(--ink)}
+  .tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+  .panel[hidden]{display:none!important}
+  .steps{counter-reset:step;list-style:none;padding:0;margin:0;max-width:74ch}
+  .steps > li{counter-increment:step;position:relative;padding-left:46px;margin-bottom:28px}
+  .steps > li::before{content:counter(step);position:absolute;left:0;top:-2px;width:30px;height:30px;
+    display:grid;place-items:center;border-radius:50%;background:var(--badge);color:var(--badge-ink);
+    font-weight:700;font-size:.9rem}
+  .steps h3{margin:0 0 8px;font-size:1rem;font-weight:600}
+  .steps p{margin:0 0 10px}
+  .handin{display:inline-block;background:var(--panel);border:1px solid var(--line);
+    border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:8px 14px;font-size:.92rem}
+  .handin b{color:var(--accent);text-transform:uppercase;letter-spacing:.06em;font-size:.8rem}
+  .steps ul{margin:8px 0 12px;padding-left:1.2rem}
+  .steps ul li{margin:.25rem 0}
+  .final{margin-top:34px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:16px 20px;max-width:74ch}
+  .final h3{margin:0 0 8px;font-size:.82rem;letter-spacing:.14em;color:var(--muted)}
+  .final ol{margin:0;padding-left:1.2rem}
   .tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
   .btn{font:inherit;font-size:.9rem;padding:8px 14px;border-radius:999px;cursor:pointer;
     border:1px solid var(--line);background:var(--panel);color:var(--ink)}
@@ -67,11 +90,20 @@
     <p class="lede">The specimen number is S# or M#. Mandibles are jaw bones. The &ldquo;cc&rdquo;
     number indicates the cranial capacity, or size of the brain. The specimens don&rsquo;t have any
     other information on purpose. You&rsquo;re not supposed to know the species!</p>
+
+    <div class="tabs" role="tablist" aria-label="Sections">
+      <button class="tab" id="tab-specimens" type="button" role="tab"
+              aria-controls="panel-specimens" aria-selected="true">Specimens</button>
+      <button class="tab" id="tab-instructions" type="button" role="tab"
+              aria-controls="panel-instructions" aria-selected="false">Instructions</button>
+    </div>
+  </header>
+
+  <section class="panel" id="panel-specimens" role="tabpanel" aria-labelledby="tab-specimens">
     <div class="tools">
       <button class="btn" id="loadAll" type="button">Load all 3D models</button>
       <button class="btn" id="resetAll" type="button">Reset viewers</button>
     </div>
-  </header>
 
     <h2 class="sect">SKULLS</h2>
     <div class="grid">
@@ -189,9 +221,53 @@
       </article>
     </div>
 
-  <p class="hint">Drag to rotate &middot; scroll or pinch to zoom &middot; right-drag (or two-finger drag) to pan
-  &middot; use the viewer&rsquo;s fullscreen control for a closer look. Models load one at a time to keep the
-  page responsive &mdash; if it slows down, press <em>Reset viewers</em>.</p>
+    <p class="hint">Drag to rotate &middot; scroll or pinch to zoom &middot; right-drag (or two-finger drag) to pan
+    &middot; use the viewer&rsquo;s fullscreen control for a closer look. Models load one at a time to keep the
+    page responsive &mdash; if it slows down, press <em>Reset viewers</em>.</p>
+  </section>
+
+  <section class="panel" id="panel-instructions" role="tabpanel" aria-labelledby="tab-instructions" hidden>
+    <ol class="steps">
+      <li>
+        <p>With your group: look at the specimens. Think about the similarities and dissimilarities
+        you observe. You won&rsquo;t need to hand anything in for this step, but it might be useful to
+        take notes.</p>
+      </li>
+      <li>
+        <p>Try putting the specimens in terms of relationship + time. Basically, try building a
+        phylogenetic tree!</p>
+        <p>Some helpful resources:</p>
+        <ul>
+          <li><a href="https://humanorigins.si.edu/human-characteristics/bodies" target="_blank" rel="noopener noreferrer">Smithsonian Institute &mdash; Bodies</a></li>
+          <li><a href="https://humanorigins.si.edu/human-characteristics/brains" target="_blank" rel="noopener noreferrer">Smithsonian Institute &mdash; Brains</a></li>
+          <li><a href="https://australian.museum/learn/science/human-evolution/shorter-jaws-with-smaller-teeth/" target="_blank" rel="noopener noreferrer">Australian Museum &mdash; Jaw Overview</a></li>
+        </ul>
+        <p class="handin"><b>Hand in:</b> your tree. It can be hand drawn or use graphics, and use
+        the specimen names I provided (e.g., S1, M3, and so on).</p>
+      </li>
+      <li>
+        <p>What characteristic(s) is your tree based upon? Why? Think about your reading and
+        Bromham&rsquo;s discussion about the importance of assumptions.</p>
+        <p class="handin"><b>Hand in:</b> this well-written answer. Aim for at least 2 paragraphs.</p>
+      </li>
+      <li>
+        <p>Excluding technical issues / the fact you&rsquo;re using 3D scans, what was difficult about
+        this process? This well-written answer should aim for 3&ndash;4 paragraphs. You should consider
+        reading assignments like Lieberman, Bromham, and any others you find relevant. You can also
+        refer to personal experiences / skillsets you relied upon during this process.</p>
+        <p class="handin"><b>Hand in:</b> this well-written answer. Aim for 3&ndash;4 paragraphs.</p>
+      </li>
+    </ol>
+
+    <div class="final">
+      <h3>WHAT TO SUBMIT ON MOODLE</h3>
+      <ol>
+        <li>Your tree</li>
+        <li>The question from step 3</li>
+        <li>The question from step 4</li>
+      </ol>
+    </div>
+  </section>
 
   <footer>
     3D models by <a href="https://sketchfab.com/digitalkenyon" target="_blank" rel="noopener noreferrer">digitalkenyon</a>
@@ -241,6 +317,28 @@
   });
   document.getElementById("resetAll").addEventListener("click", function () {
     document.querySelectorAll(".stage").forEach(reset);
+  });
+
+  var TABS = ["specimens", "instructions"];
+  function show(name) {
+    if (TABS.indexOf(name) === -1) name = TABS[0];
+    TABS.forEach(function (t) {
+      var tab = document.getElementById("tab-" + t);
+      var panel = document.getElementById("panel-" + t);
+      var on = (t === name);
+      tab.setAttribute("aria-selected", on ? "true" : "false");
+      panel.hidden = !on;
+    });
+  }
+  TABS.forEach(function (t) {
+    document.getElementById("tab-" + t).addEventListener("click", function () {
+      show(t);
+      history.replaceState(null, "", "#" + t);
+    });
+  });
+  show((location.hash || "").replace("#", ""));
+  window.addEventListener("hashchange", function () {
+    show((location.hash || "").replace("#", ""));
   });
 })();
 </script>
