@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>P+L 4 &mdash; Unidentified Specimens</title>
+<meta name="description" content="Interactive 3D viewer for the unidentified hominin specimens in Practice + Learn 4.">
+<style>
+  :root{
+    color-scheme: light dark;
+    --bg:#f7f6f3; --panel:#fff; --ink:#1b1a18; --muted:#6c685f;
+    --line:#e3dfd7; --accent:#8a5a22; --badge:#2f2b25; --badge-ink:#f7f3ea;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141310; --panel:#1e1d18; --ink:#efece4; --muted:#a6a196;
+           --line:#33302a; --accent:#d9ae6a; --badge:#d9ae6a; --badge-ink:#1a1813; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding: env(safe-area-inset-top,0px) 16px env(safe-area-inset-bottom,0px);}
+  .wrap{max-width:1180px;margin:0 auto;padding-block:32px 56px}
+  header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
+  h1{font-size:clamp(1.4rem,3.4vw,2rem);margin:0 0 8px;letter-spacing:-.01em}
+  .lede{margin:0;color:var(--muted);max-width:62ch}
+  .tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .btn{font:inherit;font-size:.9rem;padding:8px 14px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .sect{font-size:.82rem;letter-spacing:.14em;color:var(--muted);margin:34px 0 14px;font-weight:700}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(310px,1fr))}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 1px 2px rgba(0,0,0,.05)}
+  .card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px}
+  .badge{background:var(--badge);color:var(--badge-ink);font-weight:700;font-size:.85rem;
+    padding:3px 11px;border-radius:999px;letter-spacing:.04em}
+  .cc{font-size:.88rem;color:var(--ink);font-variant-numeric:tabular-nums}
+  .cc.muted{color:var(--muted);font-style:italic}
+  .stage{position:relative;width:100%;aspect-ratio:4/3;background:#111;border-top:1px solid var(--line)}
+  .stage img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .load{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:.9rem;font-weight:600;
+    color:#fff;background:rgba(18,18,18,.74);border:1px solid rgba(255,255,255,.35);
+    padding:10px 16px;border-radius:999px;cursor:pointer;backdrop-filter:blur(3px)}
+  .load:hover{background:rgba(18,18,18,.92);border-color:#fff}
+  .cube{width:9px;height:9px;border:2px solid currentColor;transform:rotate(45deg);display:inline-block}
+  .hint{margin:24px 0 0;color:var(--muted);font-size:.9rem;max-width:72ch}
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.83rem;line-height:1.6}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>P+L 4 &mdash; Unidentified Specimens</h1>
+    <p class="lede">Each specimen below is unlabeled. Use the 3D viewers to examine the crania and
+    mandibles from every angle, then record your identifications on your worksheet. Cranial capacity
+    (cc) is given for each skull.</p>
+    <div class="tools">
+      <button class="btn" id="loadAll" type="button">Load all 3D models</button>
+      <button class="btn" id="resetAll" type="button">Reset viewers</button>
+    </div>
+  </header>
+
+    <h2 class="sect">SKULLS</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="card-head"><span class="badge">S1</span><span class="cc">1300 cc</span></div>
+        <div class="stage" data-uid="8057bc6be06f47a0bff37a51b2341447" data-label="S1">
+          <img class="poster" src="https://media.sketchfab.com/models/8057bc6be06f47a0bff37a51b2341447/thumbnails/e03541a482084e0e871c39bb7b3dfb99/953755b4c26f41538205e2828ae98b66.jpeg" alt="Specimen S1" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen S1">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><span class="badge">S2</span><span class="cc">1580 cc</span></div>
+        <div class="stage" data-uid="150b5e0497434107b1a8b01618899fae" data-label="S2">
+          <img class="poster" src="https://media.sketchfab.com/models/150b5e0497434107b1a8b01618899fae/thumbnails/e701a88db3894a6faceb51ee9f07ba57/a75761fefe3f4da699a190cf5d7f7785.jpeg" alt="Specimen S2" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen S2">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><span class="badge">S3</span><span class="cc">1000 cc</span></div>
+        <div class="stage" data-uid="b73234d0424f4e4d8e86591775046d3e" data-label="S3">
+          <img class="poster" src="https://media.sketchfab.com/models/b73234d0424f4e4d8e86591775046d3e/thumbnails/143546eedb574c3da1541997e056a944/505d54598c154fa3bf018d1d617c38c3.jpeg" alt="Specimen S3" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen S3">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><span class="badge">S4</span><span class="cc">1200 cc</span></div>
+        <div class="stage" data-uid="f9da38432cc8411d9ccbce333d55f160" data-label="S4">
+          <img class="poster" src="https://media.sketchfab.com/models/f9da38432cc8411d9ccbce333d55f160/thumbnails/042809a28cad47ba97b2f942682a58c5/d1ee9032e874460d98dfbb7e52b870b3.jpeg" alt="Specimen S4" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen S4">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><span class="badge">S5</span><span class="cc">1350 cc</span></div>
+        <div class="stage" data-uid="c6b15302eec04f668d9d091351052447" data-label="S5">
+          <img class="poster" src="https://media.sketchfab.com/models/c6b15302eec04f668d9d091351052447/thumbnails/c695fdd5e43c400d927480eb2273089d/228271dd1f4f46feb157a590974fed4d.jpeg" alt="Specimen S5" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen S5">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><span class="badge">S6</span><span class="cc">1200 cc</span></div>
+        <div class="stage" data-uid="345ca51c7d574b359f996b8250ae6615" data-label="S6">
+          <img class="poster" src="https://media.sketchfab.com/models/345ca51c7d574b359f996b8250ae6615/thumbnails/64aebb42bbfb4ada84c01f80ebf6cd9a/a436c8398cc142f397c771ebe9f07a09.jpeg" alt="Specimen S6" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen S6">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><span class="badge">S7</span><span class="cc">1550 cc</span></div>
+        <div class="stage" data-uid="f6dd06fc25a644dea1ab350feca59f8f" data-label="S7">
+          <img class="poster" src="https://media.sketchfab.com/models/f6dd06fc25a644dea1ab350feca59f8f/thumbnails/8ed086a24af24ac1bd67fbe23b95029f/9aff944f2d4f4acdb9be6139aee2a37b.jpeg" alt="Specimen S7" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen S7">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><span class="badge">S8</span><span class="cc">510 cc</span></div>
+        <div class="stage" data-uid="a43d153c94e04994bd26f05e168778c4" data-label="S8">
+          <img class="poster" src="https://media.sketchfab.com/models/a43d153c94e04994bd26f05e168778c4/thumbnails/9ea3ecf94cdc41be917a53c4c6574a22/aba5e725c7a048d2b9b5fed555cc08df.jpeg" alt="Specimen S8" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen S8">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><span class="badge">S9</span><span class="cc">1100 cc</span></div>
+        <div class="stage" data-uid="129afe48f7224feda6bcb59901ccb1cb" data-label="S9">
+          <img class="poster" src="https://media.sketchfab.com/models/129afe48f7224feda6bcb59901ccb1cb/thumbnails/6c8d92c31d7f4e06a469cfc72717ecc4/f1ab2a0086e0462a8d2ce0b04c2cf8ed.jpeg" alt="Specimen S9" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen S9">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+    </div>
+
+    <h2 class="sect">MANDIBLES</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="card-head"><span class="badge">M1</span><span class="cc muted">mandible</span></div>
+        <div class="stage" data-uid="d68a3f201b054d65a354a0705d54c74c" data-label="M1">
+          <img class="poster" src="https://media.sketchfab.com/models/d68a3f201b054d65a354a0705d54c74c/thumbnails/0f28947f1b5e4de3af71d030c310951a/eb488c471a8d40609f995148c510d8d2.jpeg" alt="Specimen M1" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen M1">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><span class="badge">M3</span><span class="cc muted">mandible</span></div>
+        <div class="stage" data-uid="55c3804f0a86425b80573c9e206252da" data-label="M3">
+          <img class="poster" src="https://media.sketchfab.com/models/55c3804f0a86425b80573c9e206252da/thumbnails/367f0e2ab6e248c8b99be82e9951109a/e2cfe7f54505417b9204ff90945f054b.jpeg" alt="Specimen M3" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen M3">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><span class="badge">M4</span><span class="cc muted">mandible</span></div>
+        <div class="stage" data-uid="a79bee0839cc43dfb220d8bcadce4dee" data-label="M4">
+          <img class="poster" src="https://media.sketchfab.com/models/a79bee0839cc43dfb220d8bcadce4dee/thumbnails/33f52dde3868456da3c76252b408a7c5/3315b26a367942e7b43c98b184338ccd.jpeg" alt="Specimen M4" loading="lazy" decoding="async">
+          <button class="load" type="button" aria-label="Load the interactive 3D model for specimen M4">
+            <span class="cube" aria-hidden="true"></span> View in 3D
+          </button>
+        </div>
+      </article>
+    </div>
+
+  <p class="hint">Drag to rotate &middot; scroll or pinch to zoom &middot; right-drag (or two-finger drag) to pan
+  &middot; use the viewer&rsquo;s fullscreen control for a closer look. Models load one at a time to keep the
+  page responsive &mdash; if it slows down, press <em>Reset viewers</em>.</p>
+
+  <footer>
+    3D models by <a href="https://sketchfab.com/digitalkenyon" target="_blank" rel="noopener noreferrer">digitalkenyon</a>
+    (Kenyon College), licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>;
+    specimen S8 by <a href="https://sketchfab.com/digitalatlasofancientlife" target="_blank" rel="noopener noreferrer">Digital Atlas of Ancient Life</a>,
+    licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>.
+    Embedded via Sketchfab. Assembled for ANTH 5A, Brandeis University.
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var EMBED = "https://sketchfab.com/models/UID_PLACEHOLDER/embed?autostart=1&ui_infos=0&ui_stop=0&ui_watermark=0&ui_watermark_link=0&ui_hint=0&ui_help=0&ui_ar=0&ui_vr=0&ui_annotations=0&ui_inspector=0&ui_fullscreen=1&ui_theme=dark";
+  function activate(stage) {
+    if (stage.dataset.loaded === "1") return;
+    stage.dataset.loaded = "1";
+    var f = document.createElement("iframe");
+    f.src = EMBED.replace("UID_PLACEHOLDER", stage.dataset.uid);
+    f.title = "3D viewer for specimen " + stage.dataset.label;
+    f.setAttribute("allow", "autoplay; fullscreen; xr-spatial-tracking");
+    f.setAttribute("allowfullscreen", "");
+    f.setAttribute("mozallowfullscreen", "true");
+    f.setAttribute("webkitallowfullscreen", "true");
+    stage.appendChild(f);
+    var b = stage.querySelector(".load");
+    if (b) b.remove();
+  }
+  function reset(stage) {
+    var f = stage.querySelector("iframe");
+    if (!f) return;
+    f.remove();
+    stage.dataset.loaded = "";
+    var b = document.createElement("button");
+    b.className = "load";
+    b.type = "button";
+    b.setAttribute("aria-label", "Load the interactive 3D model for specimen " + stage.dataset.label);
+    b.innerHTML = '<span class="cube" aria-hidden="true"></span> View in 3D';
+    stage.appendChild(b);
+  }
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".load");
+    if (btn) activate(btn.closest(".stage"));
+  });
+  document.getElementById("loadAll").addEventListener("click", function () {
+    document.querySelectorAll(".stage").forEach(activate);
+  });
+  document.getElementById("resetAll").addEventListener("click", function () {
+    document.querySelectorAll(".stage").forEach(reset);
+  });
+})();
+</script>
+</body>
+</html>
