@@ -49,6 +49,13 @@
     border-radius:12px;padding:16px 20px;max-width:74ch}
   .final h3{margin:0 0 8px;font-size:.82rem;letter-spacing:.14em;color:var(--muted)}
   .final ol{margin:0;padding-left:1.2rem}
+  .hints{counter-reset:hint;list-style:none;padding:0;margin:0;max-width:74ch}
+  .hints > li{counter-increment:hint;position:relative;padding:14px 18px 14px 52px;
+    margin-bottom:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  .hints > li::before{content:counter(hint);position:absolute;left:14px;top:14px;
+    width:26px;height:26px;display:grid;place-items:center;border-radius:50%;
+    background:var(--badge);color:var(--badge-ink);font-weight:700;font-size:.82rem}
+  .hints > li b{color:var(--accent);display:block;margin-bottom:3px}
   .tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
   .btn{font:inherit;font-size:.9rem;padding:8px 14px;border-radius:999px;cursor:pointer;
     border:1px solid var(--line);background:var(--panel);color:var(--ink)}
@@ -102,6 +109,8 @@
               aria-controls="panel-specimens" aria-selected="true">Specimens</button>
       <button class="tab" id="tab-instructions" type="button" role="tab"
               aria-controls="panel-instructions" aria-selected="false">Instructions</button>
+      <button class="tab" id="tab-hints" type="button" role="tab"
+              aria-controls="panel-hints" aria-selected="false">Helpful Hints</button>
     </div>
   </header>
 
@@ -276,6 +285,27 @@
     </div>
   </section>
 
+  <section class="panel" id="panel-hints" role="tabpanel" aria-labelledby="tab-hints" hidden>
+    <ol class="hints">
+      <li>Color is not necessarily representative of what the fossil looks like in real life. These
+      are 3D scans of very high quality 3D prints of fossils. The creators of the scans (or the 3D
+      prints) may have adjusted the colors to highlight particular features.</li>
+
+      <li>Color differentiation can matter, often to show distinctive features. For example: S4 has
+      white and red parts. This is to show how the specimen&rsquo;s parts (fossil? bone? I am being
+      obtuse on purpose) were fragmented when found, and then they are shown pieced together. So the
+      white part is like a piece of clay and they position the specimen&rsquo;s parts.</li>
+
+      <li><b>Why is stuff missing?</b> Because this is what was found for that specimen.</li>
+
+      <li><b>Can a mandible belong to one of the skulls?</b> Yes. Or no.</li>
+
+      <li><b>Why isn&rsquo;t the skull hollow?</b> Because it&rsquo;s a 3D model of a fossil! Remember,
+      fossils are when the organic matter turns to stone. Your skull is organic, and so is your
+      brain.</li>
+    </ol>
+  </section>
+
   <footer>
     <p>3D models by <a href="https://sketchfab.com/digitalkenyon" target="_blank" rel="noopener noreferrer">digitalkenyon</a>
     (Kenyon College), licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>;
@@ -329,7 +359,7 @@
     document.querySelectorAll(".stage").forEach(reset);
   });
 
-  var TABS = ["specimens", "instructions"];
+  var TABS = ["specimens", "instructions", "hints"];
   function show(name) {
     if (TABS.indexOf(name) === -1) name = TABS[0];
     TABS.forEach(function (t) {
