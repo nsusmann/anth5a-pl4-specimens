@@ -1,0 +1,4 @@
+# Session transcripts and archives stay out of version control.
+conversation-log/
+*.zip
+session-export-*
